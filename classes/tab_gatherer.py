@@ -1,7 +1,6 @@
 import json
 
-from PyQt6.QtCore import QEvent, Qt
-from PyQt6.QtWidgets import QTabWidget, QWidget, QVBoxLayout, QLabel, QTabBar, QLineEdit
+from PyQt6.QtWidgets import QTabWidget, QWidget, QVBoxLayout, QLabel
 
 from classes.text_stack import TextStack
 

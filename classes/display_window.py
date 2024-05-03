@@ -1,8 +1,7 @@
 import json
+from PyQt6.QtWidgets import QWidget, QTextBrowser, QVBoxLayout
 
-from PyQt6.QtGui import QFont
-from PyQt6.QtWidgets import QLabel, QWidget, QTextBrowser, QVBoxLayout
-
+from classes.numbered_text_edit import NumberedTextEdit
 from util.config_loader import ConfigLoader
 
 CHAR_SETTINGS_URL = "/home/toni/Projects/TextGatherer/config/char_settings.json"
@@ -12,7 +11,8 @@ class DisplayWindow(QWidget):
 
     def __init__(self):
         super().__init__()
-        self.display_window = QTextBrowser()
+        self.display_window = NumberedTextEdit()
+        self.display_window.setReadOnly(True)
         self.layout = QVBoxLayout()
         self.setLayout(self.layout)
         self._init_ui()
@@ -28,4 +28,4 @@ class DisplayWindow(QWidget):
         for char in conv:
             plain_text = plain_text.replace(f"\\{char}", conv[char])
 
-        self.display_window.setText(plain_text)
+        self.display_window.setPlainText(plain_text)

@@ -1,11 +1,9 @@
-import json
 import sys
 
-from PyQt6.QtWidgets import QApplication, QLabel, QWidget, QPushButton, QTextEdit, QHBoxLayout, QVBoxLayout, \
-    QMainWindow, QStackedWidget
+from PyQt6.QtWidgets import QApplication, QWidget, QPushButton, QHBoxLayout, QVBoxLayout, \
+    QMainWindow
 
 from classes.tab_gatherer import TabGatherer
-from classes.text_stack import TextStack
 
 CHAR_SETTINGS_URL = "/home/toni/Projects/TextGatherer/config/char_settings.json"
 
@@ -45,8 +43,7 @@ class MainWindow(QMainWindow):
 
         # Set window title and size
         self.setWindowTitle("TextGatherer")
-        self.setGeometry(100, 100, 600, 400)
-
+        self.setGeometry(1200, 300, 800, 800)
 
 
 if __name__ == '__main__':

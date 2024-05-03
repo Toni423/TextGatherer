@@ -1,16 +1,16 @@
-from PyQt6.QtGui import QFont
-from PyQt6.QtWidgets import QLabel, QWidget, QTextEdit, QVBoxLayout
+from PyQt6.QtWidgets import QWidget, QTextEdit, QVBoxLayout
 
+from classes.numbered_text_edit import NumberedTextEdit
 from util.config_loader import ConfigLoader
 
 
-class EditorWindow(QWidget):
+class EditorWindow(QTextEdit):
 
     def __init__(self, text):
         super().__init__()
         self.layout = QVBoxLayout()
         self.setLayout(self.layout)
-        self.edit_window = QTextEdit()
+        self.edit_window = NumberedTextEdit()
         self.edit_window.setPlainText(text)
         self._init_ui()
 
