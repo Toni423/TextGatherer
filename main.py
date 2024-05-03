@@ -47,13 +47,6 @@ class MainWindow(QMainWindow):
         self.setWindowTitle("TextGatherer")
         self.setGeometry(100, 100, 600, 400)
 
-    @staticmethod
-    def save_button_clicked(text: str):
-        with open(DOCUMENT_URL, 'w') as f:
-            f.write(text)
-
-
-
 
 
 if __name__ == '__main__':
