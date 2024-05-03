@@ -6,9 +6,9 @@ from classes.editor_window import EditorWindow
 
 class TextStack(QStackedWidget):
 
-    def __init__(self):
+    def __init__(self, text):
         super().__init__()
-        self.editor_window = EditorWindow()
+        self.editor_window = EditorWindow(text)
         self.addWidget(self.editor_window)
         self.display_window = DisplayWindow()
         self.addWidget(self.display_window)
@@ -19,6 +19,13 @@ class TextStack(QStackedWidget):
             self.setCurrentIndex(0)
             return
 
+        self.display_window.set_text(self.editor_window.plain_text)
+        self.setCurrentIndex(1)
+
+    def to_edit_mode(self):
+        self.setCurrentIndex(0)
+
+    def to_display_mode(self):
         self.display_window.set_text(self.editor_window.plain_text)
         self.setCurrentIndex(1)
 

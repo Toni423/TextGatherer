@@ -1,24 +1,21 @@
+from PyQt6.QtGui import QFont
 from PyQt6.QtWidgets import QLabel, QWidget, QTextEdit, QVBoxLayout
 
-DOCUMENT_URL = "/home/toni/Projects/TextGatherer/document"
+from util.config_loader import ConfigLoader
 
 
 class EditorWindow(QWidget):
 
-    def __init__(self):
+    def __init__(self, text):
         super().__init__()
         self.layout = QVBoxLayout()
         self.setLayout(self.layout)
         self.edit_window = QTextEdit()
-        with open(DOCUMENT_URL, "r") as f:
-            self.edit_window.setPlainText(f.read())
+        self.edit_window.setPlainText(text)
         self._init_ui()
 
     def _init_ui(self):
-        header = QLabel()
-        header.setText("Editor")
-        self.layout.addWidget(header)
-
+        self.edit_window.setFont(ConfigLoader.get_font())
         self.layout.addWidget(self.edit_window)
 
     @property

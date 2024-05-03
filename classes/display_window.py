@@ -1,8 +1,11 @@
 import json
 
+from PyQt6.QtGui import QFont
 from PyQt6.QtWidgets import QLabel, QWidget, QTextBrowser, QVBoxLayout
 
-CHAR_SETTINGS_URL = "/home/toni/Projects/TextGatherer/char_settings.json"
+from util.config_loader import ConfigLoader
+
+CHAR_SETTINGS_URL = "/home/toni/Projects/TextGatherer/config/char_settings.json"
 
 
 class DisplayWindow(QWidget):
@@ -15,10 +18,7 @@ class DisplayWindow(QWidget):
         self._init_ui()
 
     def _init_ui(self):
-        header = QLabel()
-        header.setText("Display")
-        self.layout.addWidget(header)
-
+        self.display_window.setFont(ConfigLoader.get_font())
         self.layout.addWidget(self.display_window)
 
     def set_text(self, plain_text: str):
