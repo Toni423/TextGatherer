@@ -1,7 +1,6 @@
 import sys
 
-from PyQt6.QtWidgets import QApplication, QWidget, QPushButton, QHBoxLayout, QVBoxLayout, \
-    QMainWindow
+from PyQt6.QtWidgets import QApplication, QWidget, QPushButton, QHBoxLayout, QVBoxLayout, QMainWindow
 
 from classes.tab_gatherer import TabGatherer
 

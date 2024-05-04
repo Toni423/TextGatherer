@@ -3,6 +3,7 @@ import json
 from PyQt6.QtWidgets import QTabWidget, QWidget, QVBoxLayout, QLabel
 
 from classes.text_stack import TextStack
+from util.plus_tab_widget import PlusTabWidget
 
 FILE_PATH = "/home/toni/Projects/TextGatherer/storage/file.json"
 
@@ -18,7 +19,7 @@ class TabGatherer(QWidget):
         self._header.setText("Editor")
         self.layout.addWidget(self._header)
 
-        self.tabs = QTabWidget()
+        self.tabs = PlusTabWidget()
         self.layout.addWidget(self.tabs)
 
     def change_display_mode(self):
