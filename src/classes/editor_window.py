@@ -1,7 +1,7 @@
-from PyQt6.QtWidgets import QWidget, QTextEdit, QVBoxLayout
+from PyQt6.QtWidgets import QTextEdit, QVBoxLayout
 
-from classes.numbered_text_edit import NumberedTextEdit
-from util.config_loader import ConfigLoader
+from src.classes.numbered_text_edit import NumberedTextEdit
+from src.util.config_loader import ConfigLoader
 
 
 class EditorWindow(QTextEdit):

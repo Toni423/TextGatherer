@@ -1,8 +1,8 @@
 import json
-from PyQt6.QtWidgets import QWidget, QTextBrowser, QVBoxLayout
+from PyQt6.QtWidgets import QWidget, QVBoxLayout
 
-from classes.numbered_text_edit import NumberedTextEdit
-from util.config_loader import ConfigLoader
+from src.classes.numbered_text_edit import NumberedTextEdit
+from src.util.config_loader import ConfigLoader
 
 CHAR_SETTINGS_URL = "/home/toni/Projects/TextGatherer/config/char_settings.json"
 

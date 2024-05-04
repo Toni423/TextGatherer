@@ -1,8 +1,7 @@
-from PyQt6.QtCore import pyqtSignal, pyqtSlot, Qt
-from PyQt6.QtGui import QIcon
-from PyQt6.QtWidgets import QTabWidget, QPushButton, QTabBar, QLineEdit, QVBoxLayout
+from PyQt6.QtCore import pyqtSignal, pyqtSlot
+from PyQt6.QtWidgets import QTabWidget, QPushButton, QTabBar, QLineEdit
 
-from classes.text_stack import TextStack
+from src.classes.text_stack import TextStack
 
 
 class PlusTabWidget(QTabWidget):

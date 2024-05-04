@@ -1,7 +1,7 @@
 from PyQt6.QtWidgets import QStackedWidget
 
-from classes.display_window import DisplayWindow
-from classes.editor_window import EditorWindow
+from src.classes.display_window import DisplayWindow
+from src.classes.editor_window import EditorWindow
 
 
 class TextStack(QStackedWidget):

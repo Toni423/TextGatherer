@@ -1,10 +1,8 @@
 import sys
-
+import project
 from PyQt6.QtWidgets import QApplication, QWidget, QPushButton, QHBoxLayout, QVBoxLayout, QMainWindow
 
-from classes.tab_gatherer import TabGatherer
-
-CHAR_SETTINGS_URL = "/home/toni/Projects/TextGatherer/config/char_settings.json"
+from src.classes.tab_gatherer import TabGatherer
 
 
 class MainWindow(QMainWindow):

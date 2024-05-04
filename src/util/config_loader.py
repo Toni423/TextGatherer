@@ -2,14 +2,14 @@ import configparser
 
 from PyQt6.QtGui import QFont
 
-CONFIG_URL = "/home/toni/Projects/TextGatherer/config/config.ini"
+import project
 
 
 class ConfigLoader:
     @staticmethod
     def get_settings():
         config = configparser.ConfigParser()
-        config.read(CONFIG_URL)
+        config.read(project.CONFIG_PATH)
         return config['Settings']
 
     @staticmethod

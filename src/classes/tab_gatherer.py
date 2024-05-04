@@ -1,11 +1,11 @@
 import json
+from pathlib import Path
 
-from PyQt6.QtWidgets import QTabWidget, QWidget, QVBoxLayout, QLabel
+from PyQt6.QtWidgets import QWidget, QVBoxLayout, QLabel
 
-from classes.text_stack import TextStack
-from util.plus_tab_widget import PlusTabWidget
-
-FILE_PATH = "/home/toni/Projects/TextGatherer/storage/file.json"
+import project
+from src.classes.text_stack import TextStack
+from src.util.plus_tab_widget import PlusTabWidget
 
 
 class TabGatherer(QWidget):
@@ -38,7 +38,7 @@ class TabGatherer(QWidget):
 
     def load_files(self):
         self.tabs.clear()
-        with open(FILE_PATH, "r") as f:
+        with open(Path(project.STORAGE_PATH) / "file.json", "r") as f:
             data = json.load(f)
 
         for file in data:
@@ -51,5 +51,5 @@ class TabGatherer(QWidget):
         for ind in range(self.tabs.count()):
             data.update({self.tabs.tabText(ind): self.tabs.widget(ind).plain_text})
 
-        with open(FILE_PATH, "w") as f:
+        with open(Path(project.STORAGE_PATH) / "file.json", "w") as f:
             json.dump(data, f)
